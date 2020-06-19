@@ -1,0 +1,66 @@
+.story {
+	&__pictures {
+		background-image: linear-gradient(
+				45deg,
+				rgba($color-primary, 0.2),
+				rgba($color-primary, 0.7)
+			),
+			url(../img/back.jpg);
+		background-size: cover;
+		grid-column: full-start / col-end 4;
+
+		display: grid;
+		grid-template-rows: repeat(6, 1fr);
+		grid-template-columns: repeat(6, 1fr);
+		align-items: center;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-column: 2/-1;
+			padding: 3re;
+		}
+	}
+
+	&__img-1 {
+		width: 100%;
+		grid-area: 2/2/6/6;
+		z-index: 4;
+		box-shadow: $shadow;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-area: 2/2/-1/5;
+		}
+	}
+
+	&__img-2 {
+		width: 121%;
+		grid-area: 4/4/7/7;
+		z-index: 5;
+		box-shadow: $shadow;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-row: 1/-1;
+			width: 100%;
+		}
+	}
+
+	&__content {
+		background-color: $color-grey-light-1;
+		grid-column: col-start 5 / full-end;
+
+		padding: 7rem 7vw;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-area: 4/2/5/-1;
+		}
+	}
+
+	&__text {
+		font-size: 1.5rem;
+		font-style: italic;
+	}
+}
